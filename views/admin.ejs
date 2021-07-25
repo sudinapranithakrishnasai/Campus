@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheet/style.css">
+    <script src="/javascripts/angular.js"></script>
+    <style>
+      .container
+      {
+        width: 650px;
+        height:750px;
+        background:rgba(0,0,0,0.6);
+        float: right;
+        padding-top: 100px;
+      }
+      input[type=text]{
+        border: none;
+        border: 1px solid silver;
+        background: transparent;
+        color: darkgray;
+        width: 300px; 
+        border-radius: 30px;
+      }
+      input[type=password]
+      {
+        border: none;
+        border: 1px solid silver;
+        background: transparent; 
+        color: darkgray; 
+        width: 300px; 
+        border-radius: 30px;
+      }
+      input[type=checkbox]
+      {
+        transform: scale(1);
+        
+      }
+    </style>
+  </head>
+  <body style="background-image: url(https://blog.hubspot.com/hubfs/ecommerce-10.jpg);background-size: cover;" ng-app="myform" ng-controller="control">
+    <center>  
+     <div class="container" >
+       <form>
+         <h3 style="color:white;margin-top:80px"><b>ADMIN</b></h3>
+         <label style="color:lightblue;padding:10px">E-mail:</label> 
+         <input type="text" placeholder="Enter your Email" class="form-control" ng-model="login.email"  required >
+         <br>
+         <label style="color:lightblue">Password:</label>
+         <input type="password" placeholder="Enter your Password"  ng-model="login.pwd" class="form-control"  required>
+         <br><br>
+         <label><small style="color:silver;padding-right:250px">Remember me</small></label>
+         <input type="checkbox" style="color:silver;float:left;margin-left:170px">
+         <a href="/forgot">
+           <small style="float:right;color:silver">Forgot Password?</small>
+         </a>
+         <br><br>
+         <button class="btn btn-primary" style="width:250px;border-radius: 30px;"  ng-click="logins(login)">Sign In</button>
+         <br><br><br>
+         
+       </form>
+     </div>
+   </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>E-shopping Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script  src="javascripts/script.js"></script>
+<script  src="javascripts/sign.js"></script>
+<style>
+  body 
+  {
+  height: 100%;
+  overflow: hidden;
+  width: 100% !important;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.backRight {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  
+  }
+
+.backLeft {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+#back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -999;
+  background: #3498db url(https://dresstokillmagazine.com/wp-content/uploads/2020/07/VelourClothing_17thAveShop_MariahWilson-3343-1.jpg);
+  background: cover;
+}
+
+#slideBox {
+  width: 50%;
+  max-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 50%;
+  position: absolute;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.topLayer {
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  left: -100%;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  background:rgba(0,0,0,0.8);
+  left: 0;
+  position: absolute;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  background:rgba(0,0,0,0.8);
+  right: 0;
+  position: absolute;
+}
+
+.content {
+  width: 250px;
+  margin: 0 auto;
+  top: 30%;
+  position: absolute;
+  left: 50%;
+  margin-left: -125px;
+}
+
+.content h1 {
+  color: skyblue;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+button {
+  background: #03A9F4;
+  padding: 10px 16px;
+  width: auto;
+  font-weight: 600;
+  text-transform:  uppercase;
+  font-size: 14px;
+  color: #fff;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+  border: 0;
+  outline: 0;
+  margin: 15px 15px 15px 0;
+  transition: all 0.25s;
+}
+
+button:hover {
+  background: #0288D1;
+  box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+}
+.off {
+  background: none;
+  color: #03A9F4;
+  box-shadow: none;
+}
+
+.right .off:hover {
+  background: #eee;
+  color: #03A9F4;
+  box-shadow: none;
+}
+.left .off:hover {
+  box-shadow: none;
+  color: #03A9F4;
+  background: #363A3D;
+}
+.form-control{
+  border: 0;
+  background:rgba(0,0,0,0.5);
+  outline: 0;
+  border-bottom: 1px solid ;
+  font-size: 14px;
+  color: #959595;
+  margin-top: 20px;
+}
+small
+{
+  color:silver;
+}
+</style>
+</head>
+<body ng-app="myform" ng-controller="control">
+ <div id="back">
+   <div class="backRight"></div>
+   <div class="backLeft"></div>
+ </div>
+ <div id="slideBox">
+  <div class="topLayer">
+    <div class="left">
+      <div class="content">
+        <h1>Sign Up</h1>
+        <form method="post" onsubmit="return false;">
+          <input type="name" class="form-control" placeholder=" Name" name="name" ng-model="user.name" required>
+          <input type="email" class="form-control" placeholder=" Email" name="email" ng-model="user.email" required>
+          <input type="password"class="form-control" placeholder="Password" name="pwd" ng-model="user.pwd" required>
+          <input type="password" class="form-control" placeholder="Confirm Password" name="cpwd" ng-model="user.cpwd" required>
+          <br>
+          <input type="radio" id="m"  name="gender" value="male" ng-model="user.gender">
+          <strong style="color: silver;padding:3px 0px 19px 5px" >Male</strong>
+          <input type="radio" id="f" name="gender" value="female" ng-model="user.gender">
+          <strong style="color:silver;padding: 0px 3px 0px 7px" >Female</strong>
+          <input type="phone"class="form-control"  placeholder="Phone number"  ng-model="user.phone" required>
+          <input type="checkbox"   style="color:silver;float:left" required>
+          <small style="color:silver;float:left left ;padding-left:5px">I accept the terms of use & Privacy Policy</small> 
+        </form>
+        <button id="goLeft" class="off">Login</button>
+        <button ng-click="post(user)">Sign up</button>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content" >
+        <h1>Login</h1>
+        <form method="post" onsubmit="return false;" >
+            <input type="text"class="form-control" placeholder="Username or E-mail"  ng-model="login.email">
+            <input type="password" class="form-control" placeholder="Password" name="pwd" ng-model="login.pwd">
+             <a href="/forgot"><small style="color:silver">Forgot Password?</small></a>
+             <br>
+            <button id="goRight" class="off" style="float:left">Sign Up</button>
+            <button id="login" type="submit" ng-click="logins(login)">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

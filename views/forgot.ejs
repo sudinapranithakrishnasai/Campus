@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forgot password</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   
+    <script src="/javascripts/forgot.js"></script>
+    <style>
+      .container
+      {
+        width: 400px;
+        background:rgba(0,0,0,0.6);
+        margin: 200px;
+       border-radius: 30px;
+        padding: 10px;
+      }
+      
+      input[type=text]{
+        border: none;
+        border: 1px solid silver;
+        background: transparent;
+        color: darkgray;
+        width: 300px;
+        border-radius: 30px;
+      }
+      label
+      {
+        color:lightblue;
+        padding:10px;
+        font-size:16px;
+      }
+      input[type=checkbox]
+      {
+          float:left;
+      }
+      small
+      {
+        padding: 2px;
+        float:left;
+        color:silver    
+      </style>
+  </head>
+  <body style="background-image: url(https://blog.dieutek.com/wp-content/uploads/2020/09/eCommerce-website-search-customer-experience.jpg);background-size: cover;" ng-app='myLogin' ng-controller='myCntrl'>
+    <center>
+     <div class="container" >
+       <form>
+         <h3 style="color:silver"><b>Reset Password</b></h3>
+         <br>
+         <!--<label>E-mail:</label> -->
+         <input type="text" placeholder="Enter your Email or Userid" class="form-control" name="email" ng-model="forget.email"  required>
+         <br>
+         <!--<input type="checkbox" ng-show='otp' required>-->
+         <!--<small  ng-show='otp'>I agree to terms and conditions</small>--> 
+         
+         <button class="btn btn-primary" style="width:100px"  ng-show='key'  ng-click="checkmail(forget)">Send OTP</button>
+         <br>
+         <!--<label>E-mail:</label> -->
+         <input type="text" placeholder="Enter Valid OTP" class="form-control"  ng-model="forget.otp" ng-show="hide" required style=" width: 300px;" >
+         <br>
+         <button class="btn btn-primary" style="width:100px" ng-show="hide"  ng-click="validate(forget)">Verify</button>
+         <br><br>
+         <input type="text" placeholder="Enter Password" class="form-control" ng-model="forget.password" ng-show="pass" style=" width: 300px;" >
+         <br>
+         <input type="text" placeholder="Enter Password Again" class="form-control"   ng-model="forget.cpassword" ng-show="pass"style=" width: 300px;" >
+         <br>
+        <button class="btn btn-info" style="width:100px"  ng-click="password(forget)" ng-show="pass"><a href="/">Reset</a></button>
+         <br><br>
+
+        <!-- <a href="/"><strong style="float:right;">Continue</strong> </a>-->
+       </form>
+     </div>
+   </center>
+ </body>
+ </html>
